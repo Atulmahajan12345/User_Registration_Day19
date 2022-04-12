@@ -18,6 +18,7 @@ public class UserRegistrationService
 		}
 	}
 
+	
 	public void checkLastName(String lastName) 
 	{
 		boolean IsMatched = Pattern.compile("^[A-Z]{1}[a-z]{3,}$").matcher(lastName).matches();
@@ -59,10 +60,10 @@ public class UserRegistrationService
 
 	}
 
-
+	
 	public void checkPassword(String password)
 	{
-		boolean IsMatched = Pattern.compile("(?=.*[a-z])(?=.*[A-Z]).{8,}").matcher(password).matches();
+		boolean IsMatched = Pattern.compile("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}").matcher(password).matches();
 		if(IsMatched)
 		{
 			System.out.println("Password is correct");
@@ -73,4 +74,3 @@ public class UserRegistrationService
 		}
 	}
 }
-

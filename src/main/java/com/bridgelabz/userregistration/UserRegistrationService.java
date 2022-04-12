@@ -59,10 +59,10 @@ public class UserRegistrationService
 
 	}
 
-	
+
 	public void checkPassword(String password)
 	{
-		boolean IsMatched = Pattern.compile("[A-Za-z0-9]{8,}").matcher(password).matches();
+		boolean IsMatched = Pattern.compile("(?=.*[a-z])(?=.*[A-Z]).{8,}").matcher(password).matches();
 		if(IsMatched)
 		{
 			System.out.println("Password is correct");
@@ -73,3 +73,4 @@ public class UserRegistrationService
 		}
 	}
 }
+
